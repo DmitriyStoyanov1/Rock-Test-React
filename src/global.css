@@ -1,0 +1,344 @@
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  height: 622px;
+  font-family: arial;
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  height: 550px;
+  border-radius: 15px;
+  background-image: linear-gradient(to right, gray, black);
+}
+
+.questions_part,
+.asks_part {
+  margin: 15px;
+  border-radius: 15px;
+}
+
+.questions_part {
+  overflow: hidden;
+  min-height: 340px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 65%;
+  border: 2px solid rgba(0, 139, 139);
+  box-shadow: 0px 0px 5px 5px rgba(0, 139, 139);
+}
+
+.asks_part {
+  position: relative;
+  flex-basis: 35%;
+  margin-top: 0px;
+  background: url('./assets/skulls.jpg') no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border: 2px solid rgba(0, 139, 139);
+  box-shadow: 0px 0px 5px 5px rgba(0, 139, 139);
+}
+
+.asks_part:after,
+.asks_part:before {
+  content: "";
+  width: 60px;
+  height: 140px;
+  background: url('./assets/rockhand.png') no-repeat;
+  background-size: contain;
+  top: 20px;
+  position: absolute;
+  animation:  pulse 2s infinite;
+  transition: 0.3s ease;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1)
+  }
+  50% {
+     transform: scale(1.10)
+  }
+  100% {
+      transform: scale(1)
+  }
+}
+
+.asks_part:before {
+  left: 40px;
+}
+
+.asks_part:after {
+  right: 40px;
+}
+
+.asks_part button {
+  width: 45%;
+  height: 25%;
+  border: transparent;
+  box-shadow: inset 0px 0px 6px 2px;
+  background: rgb(1, 50, 32);
+  border-radius: 5px;
+}
+
+.asks_part button:hover {
+ color: rgb(1, 50, 32);
+ background-color: white;
+}
+
+.asks_part button:last-child {
+  margin-bottom: 0px;
+}
+
+.screen {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.screen .start {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  background: url("./assets/start.jpeg") no-repeat center;
+  background-size: 100% 100%;
+  width: 100%;
+}
+
+.screen .batman {
+  display: flex;
+  align-items: center;
+  line-height: 28px;
+  background: url("./assets/batman-second-back.jpg") no-repeat center;
+  background-size: 100% 100%;
+  width: 100%;
+}
+
+.batman p {
+  align-self: flex-start;
+  width: 31%;
+  margin: 10px;
+  color: white;
+}
+
+.screen .start button,
+.screen .batman button {
+  min-width: 200px;
+  height: 48px;
+  border-radius: 13px;
+  border: transparent;
+  background-color: rgb(65, 105, 225);
+  color: white;
+  font-family: 'Pangolin', cursive;
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: 1px 3px 6px black;
+  box-shadow: 0px 1px 13px 15px;
+  transition: 1s;
+}
+
+.screen .start button:hover,
+.screen .batman button:hover {
+  background-color: rgb(158, 33, 22);
+}
+
+.question {
+  background-position: center;
+  background-size: cover;
+}
+
+.question .question-content {
+  width: 100%;
+  margin-top: auto;
+  border-radius: 4px;
+  background-color: #fff;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.screen.question {
+  position: relative;
+  display: flex;
+  background-size: 100% 103%;
+  background-repeat: no-repeat;
+  border-radius: 13px;
+}
+.screen.question p {
+  font-size: 19px;
+  line-height: 28px;
+  margin: 10px;
+}
+
+.screen.question .counter {
+  position: absolute;
+  padding: 4px;
+  font-weight: 700;
+  background-color: #fff;
+  border-radius: 4px;
+  bottom: 0;
+  right: 0;
+}
+
+.screen.question button{
+  width: 29%;
+  height: 15%;
+  border-radius: 13px;
+  border: transparent;
+  background-color: rgb(65, 105, 225);
+  color: white;
+  font-family: 'Pangolin', cursive;
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: 1px 3px 6px black;
+  box-shadow: 0px 1px 13px 15px;
+  transition: 1s;
+  align-self: center;
+}
+
+.screen.question button:hover {
+  background-color: rgb(158, 33, 22);
+}
+
+.hidden {
+  display: none;
+  pointer-events: none;
+}
+
+.final_tab {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.final_tab p {
+  text-align: center;
+}
+
+.screen.question p,
+.final_tab p,
+.asks_part button,
+.render_questions p {
+  font-family: 'Pangolin', cursive;
+  font-size: 18px;
+  color: white;
+  text-shadow: 1px 1px 2px black;
+  letter-spacing: 1px;
+}
+
+.asks_part button {
+  font-size: 14px;
+}
+
+.final_count {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.render_questions p {
+  margin: 10px 10px;
+  text-align: center;
+}
+
+.render_questions {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.render_questions audio {
+  height: 23px;
+}
+
+/* Стили для хака */
+
+.hack-popup {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  display: none;
+  pointer-events: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+}
+
+.hack-popup #hack {
+  width: 340px;
+  height: 60px;
+  background-color: black;
+  color: #fff;
+  border: none;
+  font-weight: 700;
+  font-size: 30px;
+  border-radius: 4px;
+  border-bottom: 2px solid yellow;
+  background-position: 20px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  cursor: pointer;
+  background-image: url('https://avatars.mds.yandex.net/get-pdb/2391763/f410b062-1676-4cbb-b2e0-dec5ef1ece73/s1200?webp=false');
+  background-size: contain;
+  animation: buttonFlames 1s infinite;
+}
+
+.hack-popup #hack:hover {
+  transform: scale(1.35);
+}
+
+.hack-popup-active .hack-popup {
+  display: flex;
+  pointer-events: all;
+}
+
+body.hacked {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.hacked .game {
+  animation: gameTilt 0.3s infinite;
+}
+
+@keyframes buttonFlames {
+  0% {
+    background-position-x: 200px;
+  }
+  50%{
+    background-position-x: 0px;
+  }
+  100% {
+    background-position-x: 200px;
+  }
+}
+
+@keyframes gameTilt {
+  0% {
+    transform: translateX(20px) translateY(-25px);
+  }
+  50%{
+    transform: translateX(0px) translateY(0px);
+  }
+  100% {
+    transform: translateX(20px) translateY(-25px);
+  }
+}
